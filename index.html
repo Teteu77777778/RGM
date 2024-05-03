@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alunos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Alunos</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>RGM</th>
+                </tr>
+            </thead>
+            <tbody id="alunos-lista"></tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const alunos = [
+                { nome: "Nicolas Marques de Oliveira", rgm: "30269580" },
+                { nome: "João Pedro de Araújo Santos", rgm: "30422078" },
+                { nome: "Igor Mitter de Souza", rgm: "31688284" },
+                { nome: "Matheus da Silva Martins", rgm: "29722772" },
+                { nome: "Matheus dos Santos Luiz", rgm: "30153573" },
+                { nome: "Kauan Bento Soares Ferreira", rgm: "30558476" }
+            ];
+
+            const listaAlunos = document.getElementById("alunos-lista");
+
+            alunos.forEach(function(aluno) {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td>${aluno.nome}</td><td>${aluno.rgm}</td>`;
+                listaAlunos.appendChild(row);
+            });
+        });
+    </script>
+</body>
+</html>
